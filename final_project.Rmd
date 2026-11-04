@@ -1,0 +1,47 @@
+---
+title: "Final Project"
+author: 'Anthony Fisher'
+date: 2026-9-30
+output: html_document
+---
+
+```{r, global-chunk-options, echo = FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+opts_chunk$set(
+  echo= FALSE, warning = FALSE, message = FALSE
+)
+```
+
+## Introduction
+
+The chosen data set for this project is titled English Premier League (EPL) Players' Statistics. The EPL is the top tier of men's soccer in England. Seasons consist of 38 matchweeks, and points are awarded for a team's match result each week. A team gets 3 points for a win, 1 for a draw, and 0 for a loss. Points are totaled up as the season goes on, and if a team has the most points out of all the others, they win the Premier League trophy.
+
+This data set was extracted from [kaggle.com](https://www.kaggle.com/code/desalegngeb/english-premier-league-players-statistics/notebook) and created by user desalegngeb. It consists of 571 players which, at the time of 2020-09-24, were in the Premier League. Columns include cumulative player statistics while they were in the EPL. Some statistics only appear for players in certain positions, e.g. saves for goalkeepers, shots on target for forwards, when relevant.
+
+The goal of this analysis is to compare players' career wins across different teams. Arsenal will be used as the reference group (Go Gunners!)
+
+## Primary Analysis
+
+```{r, primary-analysis}
+here::i_am('final_project.Rmd')
+
+tbl_f <- readRDS(
+  file = here::here('output', 'table.rds')
+)
+
+tbl_f
+```
+
+
+Of the teams with significant Incidence Rate Ratios, only Liverpool (IRR = 1.15) and Manchester City (IRR = 1.25) players had higher career win rates relative to Arsenal players. 
+
+## Data Visualization
+
+```{r, boxplots, fig.width= 10}
+fig_f <- readRDS(
+  file = here::here('output', 'fig_f.rds')
+)
+
+fig_f
+```
+Here is a boxplot visualization of the career win rates among players on different teams
