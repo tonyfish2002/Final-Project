@@ -16,3 +16,7 @@ outputs: output/table.rds output/fig_f.rds
 .PHONY: clean	
 clean:
 	rm -f output/*.rds && rm -f clean_data/*.rds && rm -f *.html
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
