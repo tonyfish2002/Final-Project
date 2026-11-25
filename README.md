@@ -8,6 +8,12 @@ To generate the report (final_project.html), simply go to a relevant terminal an
 make 
 ```
 
+To synchronize your package versions with the ones I used for this project, run
+
+```bash
+make install
+```
+
 To only produce the clean data set, run
 
 ``` bash
